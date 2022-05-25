@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
+
 
 }

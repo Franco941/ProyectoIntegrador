@@ -1,5 +1,6 @@
 package com.portfolio.Fran.Entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,9 +10,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 
-public class Experiencia {
+public class Experiencia implements Serializable {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private long idExp;
     
     @NotNull
@@ -23,20 +24,21 @@ public class Experiencia {
     private int añosExp;
     
     @Size(min = 30, max = 500, message = "no cumple con la longitud")
-    private String descripcion;
+    private String descripcionEXP;
 
     private String imagenExp;
 
     public Experiencia() {
     }
 
-    public Experiencia(long idExp, String tituloExp, int añosExp, String descripcion, String imagenExp) {
+    public Experiencia(long idExp, String tituloExp, int añosExp, String descripcionEXP, String imagenExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
         this.añosExp = añosExp;
-        this.descripcion = descripcion;
+        this.descripcionEXP = descripcionEXP;
         this.imagenExp = imagenExp;
     }
+    
 
     public long getIdExp() {
         return idExp;
@@ -62,12 +64,12 @@ public class Experiencia {
         this.añosExp = añosExp;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionEXP() {
+        return descripcionEXP;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionEXP(String descripcionEXP) {
+        this.descripcionEXP = descripcionEXP;
     }
 
     public String getImagenExp() {
@@ -77,7 +79,7 @@ public class Experiencia {
     public void setImagenExp(String imagenExp) {
         this.imagenExp = imagenExp;
     }
-    
+
     
    
 }

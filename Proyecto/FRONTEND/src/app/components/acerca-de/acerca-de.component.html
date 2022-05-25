@@ -1,18 +1,19 @@
-<div class="row g-0">
+<div class="row g-0" *ngIf="usuario">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src="../../../assets/Perfil.jpg" class="img-fluid" id="fotodeperfil">
+        <img src={{usuario.fotoPerfil}} class="img-fluid" id="fotodeperfil">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <p id="nombre"> {{persona.nombre}} {{persona.apellido}} </p>
-        <p>El rey de los mares</p>
+        <p id="nombre"> {{usuario.nombre}} {{usuario.apellido}} </p>
+        <p> {{usuario.titulo}}</p>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
         <span>
             <h1>Acerca de mi</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <p>{{usuario.descripcion}}
 
             </p>
         </span>
     </div>
 
-</div>
+    </div>
+

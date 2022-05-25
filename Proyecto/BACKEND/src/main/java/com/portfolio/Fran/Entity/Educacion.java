@@ -1,5 +1,6 @@
 package com.portfolio.Fran.Entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,9 +10,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 
-public class Eduacion {
+public class Educacion implements Serializable {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private long idEdu;
     
     @NotNull
@@ -27,10 +28,10 @@ public class Eduacion {
 
     private String imagenEdu;
 
-    public Eduacion() {
+    public Educacion() {
     }
 
-    public Eduacion(long idEdu, String tituloEdu, int añosEdu, String descripcionEdu, String imagenEdu) {
+    public Educacion(long idEdu, String tituloEdu, int añosEdu, String descripcionEdu, String imagenEdu) {
         this.idEdu = idEdu;
         this.tituloEdu = tituloEdu;
         this.añosEdu = añosEdu;

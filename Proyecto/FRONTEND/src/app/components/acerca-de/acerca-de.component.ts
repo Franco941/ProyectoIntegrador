@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
-import { PersonaService } from 'src/app/service/persona.service';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/service/usuario.service';
+
 
 @Component({
   selector: 'app-acerca-de',
@@ -8,12 +10,24 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: persona = new persona("","","");
+  public usuario : Usuario | undefined;
+  public editUsuario: Usuario | undefined;
 
-  constructor(public personaService: PersonaService) { }
+  constructor(private usuarioService : UsuarioService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+    this.getUser();
+  }
+
+  public getUser():void{
+    this.usuarioService.getUser().subscribe({
+      next: (response: Usuario) =>{
+        this.usuario=response;
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
   }
 
 }
