@@ -17,7 +17,7 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`)
   }
 
-  public updateUsuario(usuario: Usuario):Observable<Usuario>{
+  public updateUser(usuario: Usuario):Observable<Usuario>{
     return this.http.put<Usuario>(`${this.apiServerUrl}/usuario/update`, usuario);
   }
 }

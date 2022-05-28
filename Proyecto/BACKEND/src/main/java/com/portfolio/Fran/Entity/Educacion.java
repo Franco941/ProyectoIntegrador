@@ -20,10 +20,10 @@ public class Educacion implements Serializable {
     private String tituloEdu;
     
     @NotNull
-    @Size(min = 4, max = 4, message = "no cumple con la longitud , ingrese un año de 4 digitos")
+    // @Size(min = 4, max = 4, message = "no cumple con la longitud , ingrese un año de 4 digitos")
     private Integer fechaEdu;
     
-    @Size(min = 30, max = 500, message = "no cumple con la longitud")
+    @Size(min = 1, max = 500, message = "no cumple con la longitud")
     private String descripcionEdu;
 
     private String imagenEdu;

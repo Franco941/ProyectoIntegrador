@@ -9,21 +9,19 @@ import javax.persistence.Id;
 
 @Entity
 
-public class Skills implements Serializable {
+public class Skill implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private long idSkill;
-        private String nombreSkill;
-        private String fotoSKill;
+        private String fotoSkill;
         private int porcentaje;
 
-    public Skills() {
+    public Skill() {
     }
 
-    public Skills(long idSkill, String nombreSkill, String fotoSKill, int porcentaje) {
+    public Skill(long idSkill, String nombreSkill, String fotoSkill, int porcentaje) {
         this.idSkill = idSkill;
-        this.nombreSkill = nombreSkill;
-        this.fotoSKill = fotoSKill;
+        this.fotoSkill = fotoSkill;
         this.porcentaje = porcentaje;
     }
 
@@ -34,21 +32,13 @@ public class Skills implements Serializable {
     public void setIdSkill(long idSkill) {
         this.idSkill = idSkill;
     }
-
-    public String getNombreSkill() {
-        return nombreSkill;
+    
+    public String getFotoSkill() {
+        return fotoSkill;
     }
 
-    public void setNombreSkill(String nombreSkill) {
-        this.nombreSkill = nombreSkill;
-    }
-
-    public String getFotoSKill() {
-        return fotoSKill;
-    }
-
-    public void setFotoSKill(String fotoSKill) {
-        this.fotoSKill = fotoSKill;
+    public void setFotoSkill(String fotoSkill) {
+        this.fotoSkill = fotoSkill;
     }
 
     public int getPorcentaje() {

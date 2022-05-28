@@ -33,23 +33,23 @@ public class Usuario implements Serializable {
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String titulo;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    // @NotNull
+    //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String descripcion;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+     // @NotNull
+     //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String fotoPerfil;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    // @NotNull
+    //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String fotoPortada;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
     private List<Educacion> educacionList;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkill")
-    private List<Skills> skillList;
+    private List<Skill> skillList;
         
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private List<Experiencia> experienciaList;

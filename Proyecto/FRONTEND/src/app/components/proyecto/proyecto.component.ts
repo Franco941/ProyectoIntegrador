@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Proyecto } from 'src/app/model/project';
+import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectoComponent implements OnInit {
 
-  constructor() { }
+  public proyectos:Proyecto[]=[];
+
+  constructor(private proyectoService: ProyectoService) { }
 
   ngOnInit(): void {
+    this.getProyectos();
+  }
+
+  public getProyectos():void{
+    this.proyectoService.getProject().subscribe({
+      next:(Response: Proyecto[]) =>{
+        this.proyectos=Response;
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
   }
 
 }

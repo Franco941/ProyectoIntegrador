@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Skill } from 'src/app/model/skill';
+import { SkillService } from 'src/app/service/skill.service';
 
 @Component({
   selector: 'app-hardskill',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HardskillComponent implements OnInit {
 
-  constructor() { }
+  public skills:Skill[]=[];
+
+  constructor(private skillService: SkillService) { }
 
   ngOnInit(): void {
+    this.getSkills();
+    
   }
 
+  public getSkills():void{
+    this.skillService.getSkill().subscribe({
+      next:(Response: Skill[]) =>{
+        this.skills=Response;
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
+  }
 }
