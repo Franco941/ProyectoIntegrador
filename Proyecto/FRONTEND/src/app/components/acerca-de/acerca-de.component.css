@@ -15,11 +15,11 @@ div{
 @media (min-width: 576px){
     #fotodeperfil{
     position: absolute;
-    width: 15%;;
+    width: 12%;;
     border-radius: 100%;
     box-shadow: 3px 3px 3px purple;
     left: 20%;
-    top: 600px;
+    top: 500px;
     }
 }
 

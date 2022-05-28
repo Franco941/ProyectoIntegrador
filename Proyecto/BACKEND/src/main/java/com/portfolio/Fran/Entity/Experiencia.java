@@ -21,7 +21,7 @@ public class Experiencia implements Serializable {
     
     @NotNull
     @Size(min = 4, max = 4, message = "no cumple con la longitud , ingrese un año de 4 digitos")
-    private int añosExp;
+    private int fechaExp;
     
     @Size(min = 30, max = 500, message = "no cumple con la longitud")
     private String descripcionEXP;
@@ -31,10 +31,10 @@ public class Experiencia implements Serializable {
     public Experiencia() {
     }
 
-    public Experiencia(long idExp, String tituloExp, int añosExp, String descripcionEXP, String imagenExp) {
+    public Experiencia(long idExp, String tituloExp, int fechaExp, String descripcionEXP, String imagenExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
-        this.añosExp = añosExp;
+        this.fechaExp = fechaExp;
         this.descripcionEXP = descripcionEXP;
         this.imagenExp = imagenExp;
     }
@@ -56,12 +56,12 @@ public class Experiencia implements Serializable {
         this.tituloExp = tituloExp;
     }
 
-    public int getAñosExp() {
-        return añosExp;
+    public int getFechaExp() {
+        return fechaExp;
     }
 
-    public void setAñosExp(int añosExp) {
-        this.añosExp = añosExp;
+    public void setFechaExp(int fechaExp) {
+        this.fechaExp = fechaExp;
     }
 
     public String getDescripcionEXP() {

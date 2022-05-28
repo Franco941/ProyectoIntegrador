@@ -1,27 +1,14 @@
-<div class="row g-0">
-    <h1>Experiencia laboral</h1>
+<div><h1>Experiencia</h1></div>
+<div class="row g-0" *ngFor="let experiencia of experiencias">   
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
         <ul>
             <li>
-                <h1>Trabajo 1</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, dolor iure dolore nesciunt rem ipsa libero magni sapiente. Iste asperiores quo sed consectetur tenetur distinctio voluptate eos iure doloribus quisquam.
-            </p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Trabajo 2</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, dolor iure dolore nesciunt rem ipsa libero magni sapiente. Iste asperiores quo sed consectetur tenetur distinctio voluptate eos iure doloribus quisquam.
-            </p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Trabajo 3</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, dolor iure dolore nesciunt rem ipsa libero magni sapiente. Iste asperiores quo sed consectetur tenetur distinctio voluptate eos iure doloribus quisquam.
-            </p>
+
+                <h1>{{experiencia.tituloExp}}</h1> - 
+                <h3>({{experiencia.fechaExp}})</h3></li>
+                <img src="{{experiencia.imagenExp}}" style="width: 150px; margin: 50px">
+            <h5>{{experiencia.descripcionExp}}</h5>
         </ul>
     </div>
 </div>

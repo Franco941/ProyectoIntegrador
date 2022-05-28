@@ -1,27 +1,14 @@
-<div class="row g-0" *ngFor="let educacion of educaciones">
-    <h1>Educacion</h1>
+<div><h1>Educacion</h1></div>
+<div class="row g-0" *ngFor="let educacion of educaciones">   
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
         <ul>
             <li>
+
+                <h1>{{educacion.tituloEdu}}</h1> - 
+                <h3>({{educacion.fechaEdu}})</h3></li>
                 <img src="{{educacion.imagenEdu}}" style="width: 150px; margin: 50px">
-                <h1>{{educacion.tituloEdu}}</h1> - 
-                <h3>2000</h3></li>
-            <p>{{educacion.descripcionEdu}}</p>
-        </ul>
-        <ul>
-            <li>
-                <img src="{{educacion.tituloEdu}}" style="width: 150px; margin: 50px" >
-                <h1></h1> - 
-                <h3>2010</h3></li>
-            <p>{{educacion.descripcionEdu}}</p>
-        </ul>
-        <ul>
-            <li>
-               <img src="{{educacion.imagenEdu}}" > 
-                <h1>{{educacion.tituloEdu}}</h1> - 
-                <h3>2020</h3></li>
-            <p>{{educacion.descripcionEdu}}</p>
+            <h5>{{educacion.descripcionEdu}}</h5>
         </ul>
     </div>
 </div>
