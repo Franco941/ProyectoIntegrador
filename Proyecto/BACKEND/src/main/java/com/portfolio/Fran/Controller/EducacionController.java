@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/educacion")
+@RequestMapping("/api/educacion")
 
 public class EducacionController {
     
@@ -24,19 +24,20 @@ public class EducacionController {
     public EducacionController(EducacionService educacionService){
         this.educacionService = educacionService;
     }
+    
     @GetMapping ("/all")
     public ResponseEntity<List<Educacion>> obtenerEducacion(){
         List <Educacion> educaciones = educacionService.buscarEducaciones();
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
     
-@PutMapping("/update")
+@PutMapping ("/update")
     public ResponseEntity<Educacion> editarEducacion(@RequestBody Educacion educacion){
         Educacion updateEducacion = educacionService.editarEducacion(educacion);
         return new ResponseEntity<>(updateEducacion, HttpStatus.OK);
     }
     
-    @PostMapping("/add")
+    @PostMapping ("/add")
     public ResponseEntity<Educacion> crearEducacion(@RequestBody Educacion educacion){
         Educacion nuevaEducacion=educacionService.agregarEducacion(educacion);
         return new ResponseEntity<>(nuevaEducacion, HttpStatus.CREATED);

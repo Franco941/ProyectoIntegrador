@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/api/usuario")
 public class UsuarioController {
     private final UsuarioService usuarioService;
     
     public UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
     }
+    
     @GetMapping ("/id/{id}")
     public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id){
         Usuario usuario = usuarioService.buscarUsuarioPorId(id);

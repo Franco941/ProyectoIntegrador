@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/proyecto")
+@RequestMapping("/api/proyecto")
 
 public class ProyectoController {
     
@@ -25,6 +25,7 @@ public class ProyectoController {
     public ProyectoController(ProyectoService proyectoService){
         this.proyectoService = proyectoService;
     }
+    
     @GetMapping ("/all")
     public ResponseEntity<List<Proyecto>> obtenerExperiencia(){
         List <Proyecto> proyectos = proyectoService.buscarProyecto();

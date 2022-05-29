@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/skill")
+@RequestMapping("/api/skill")
 
 public class SkillController {
 
@@ -26,6 +26,7 @@ public class SkillController {
     public SkillController(SkillService skillService){
         this.skillService = skillService;
     }
+    
     @GetMapping ("/all")
     public ResponseEntity<List<Skill>> obtenerSkill(){
         List <Skill> skills = skillService.buscarSkill();

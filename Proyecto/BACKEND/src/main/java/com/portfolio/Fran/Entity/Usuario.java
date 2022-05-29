@@ -41,8 +41,8 @@ public class Usuario implements Serializable {
      //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String fotoPerfil;
     
-    // @NotNull
-    //@Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @NotNull
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud")
     private String fotoPortada;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")

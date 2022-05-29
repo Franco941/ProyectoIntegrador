@@ -12,7 +12,11 @@ div{
     margin-top: 40%;
 }
 
-@media (min-width: 576px){
+#fotodeperfil{
+    border-radius: 100%;
+}
+
+/*@media (min-width: 576px){
     #fotodeperfil{
     position: absolute;
     width: 12%;;
@@ -33,3 +37,4 @@ div{
     top: 630px;
     }
 }
+*/
