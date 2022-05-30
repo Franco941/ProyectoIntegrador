@@ -1,4 +1,14 @@
 .row{
-    background-color: gray;
-    padding: 20px;
+    background-color: #161616;
+}
+
+h1{
+  padding-left: 50px !important;
+}
+div{
+    background: #161616;
+}
+
+#boton {
+  margin-right: 80px; 
 }

@@ -9,8 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 
 @Entity
@@ -21,28 +20,11 @@ public class Usuario implements Serializable {
     @Column(nullable = false, updatable = false)
     private Long id;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String apellido;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String titulo;
-    
-    // @NotNull
-    //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String descripcion;
-    
-     // @NotNull
-     //@Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String fotoPerfil;
-    
-    @NotNull
-    @Size(min = 1, max = 1000, message = "no cumple con la longitud")
     private String fotoPortada;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")

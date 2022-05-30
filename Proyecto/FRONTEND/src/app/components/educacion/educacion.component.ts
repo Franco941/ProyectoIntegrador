@@ -32,7 +32,7 @@ export class EducacionComponent implements OnInit {
       }
     })
   }
-public onOpenModal(mode:String, education?: Educacion):void{
+  public onOpenModal(mode:String, education?: Educacion):void{
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display='none';
@@ -50,7 +50,7 @@ public onOpenModal(mode:String, education?: Educacion):void{
     button.click();
 
     }
-public onAddEducacion(addForm: NgForm){
+    public onAddEducacion(addForm: NgForm){
       document.getElementById('add-educacion-form')?.click();
       this.educacionService.addEducation(addForm.value).subscribe({
         next: (response:Educacion) =>{
@@ -71,20 +71,20 @@ public onAddEducacion(addForm: NgForm){
         next: (response:Educacion) =>{
           console.log(response);
           this.getEducaciones();
-
+          
         },
         error:(error:HttpErrorResponse)=>{
           alert(error.message);
         }
       })
     }
-public onDeleteEducacion(idEdu: number):void{
+    public onDeleteEducacion(idEdu: number):void{
 
       this.educacionService.deleteEducation(idEdu).subscribe({
         next: (response:void) =>{
           console.log(response);
           this.getEducaciones();
-
+          
         },
         error:(error:HttpErrorResponse)=>{
           alert(error.message);

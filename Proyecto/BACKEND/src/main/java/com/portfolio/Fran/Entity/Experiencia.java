@@ -68,7 +68,7 @@ public class Experiencia implements Serializable {
         return descripcionExp;
     }
 
-    public void setDescripcionExp(String descripcionEXP) {
+    public void setDescripcionExp(String descripcionExp) {
         this.descripcionExp = descripcionExp;
     }
 

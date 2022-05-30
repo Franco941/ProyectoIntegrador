@@ -1,11 +1,27 @@
 .row{
-    padding: 20px;
+    background-color: #161616;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+h1 {
+    padding-left: 50px !important;
 }
 
 div{
-    background: gray;
+    background: #161616;
 }
 
-h1, h3{
-    display: inline;
+.parte1 {
+    display:inline-block;
+    text-align: center;
+}
+
+.img-experiencia{
+    box-shadow:  10px 10px 5px #000000;
+    box-shadow: ejeX ejeY difumasion color;
+}
+
+#foto {
+    width: 200px;
+    height: 200px;
 }
