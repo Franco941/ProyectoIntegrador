@@ -11,30 +11,32 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 
-
 public class UsuarioService {
+
     private final UsuarioRepo usuarioRepo;
-    
+
     @Autowired
-    public UsuarioService(UsuarioRepo usuarioRepo){
+    public UsuarioService(UsuarioRepo usuarioRepo) {
         this.usuarioRepo = usuarioRepo;
     }
-     public Usuario agregarUsuario(Usuario usuario ){
+
+    public Usuario agregarUsuario(Usuario usuario) {
         return usuarioRepo.save(usuario);
     }
-    public List<Usuario> buscarUsuario(){
+
+    public List<Usuario> buscarUsuario() {
         return usuarioRepo.findAll();
     }
-    
-    public Usuario editarUsuario(Usuario usuario){
+
+    public Usuario editarUsuario(Usuario usuario) {
         return usuarioRepo.save(usuario);
     }
-    
-    public void borrarUsuario(Long id){
+
+    public void borrarUsuario(Long id) {
         usuarioRepo.deleteById(id);
     }
-    
-    public Usuario buscarUsuarioPorId(Long id){
-        return usuarioRepo.findById(id).orElseThrow(()->new UserNotFoundException("Usuario no encontrado"));
+
+    public Usuario buscarUsuarioPorId(Long id) {
+        return usuarioRepo.findById(id).orElseThrow(() -> new UserNotFoundException("Usuario no encontrado"));
     }
 }

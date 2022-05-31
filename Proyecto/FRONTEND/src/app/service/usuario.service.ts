@@ -9,15 +9,15 @@ import { Usuario } from '../model/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl = "https://argprogback.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
-  public getUser(): Observable<Usuario>{
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`)
+  public getUser(): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.apiServerUrl}/api/usuario/id/1`)
   }
 
-  public updateUser(usuario: Usuario):Observable<Usuario>{
-    return this.http.put<Usuario>(`${this.apiServerUrl}/usuario/update`, usuario);
+  public updateUser(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(`${this.apiServerUrl}/api/usuario/update`, usuario);
   }
 }

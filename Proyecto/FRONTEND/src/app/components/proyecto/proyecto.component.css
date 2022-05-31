@@ -1,18 +1,25 @@
-.row{
-    padding: 20px;
-    background-color: gray;
+.row {
+    background-color: #161616;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-.contenedor{
-    width: auto;
-
+h1 {
+    padding-left: 128px !important;
 }
 
-.parte1, .parte2{
-    display:inline-block;
-    text-align: justify;
+.btn {
+    margin-left: 10px;
+    border-radius: 50px;
 }
 
-.img-proyecto{
-    box-shadow: 10px 10px 10px black;
+.parte1 {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#foto {
+    width: 200px;
+    height: 200px;
 }

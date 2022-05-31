@@ -11,25 +11,28 @@ import org.springframework.stereotype.Service;
 @Transactional
 
 public class ExperienciaService {
+
     private final ExperienciaRepo experienciaRepo;
-    
-        @Autowired
+
+    @Autowired
     public ExperienciaService(ExperienciaRepo experienciaRepo) {
         this.experienciaRepo = experienciaRepo;
     }
-    public Experiencia agregarExperiencia(Experiencia experiencia ){
+
+    public Experiencia agregarExperiencia(Experiencia experiencia) {
         return experienciaRepo.save(experiencia);
     }
-    public List<Experiencia> buscarExperiencia(){
+
+    public List<Experiencia> buscarExperiencia() {
         return experienciaRepo.findAll();
     }
-    
-    public Experiencia editarExperiencia(Experiencia experiencia){
+
+    public Experiencia editarExperiencia(Experiencia experiencia) {
         return experienciaRepo.save(experiencia);
     }
-    
-    public void borrarExperiencia(Long id){
+
+    public void borrarExperiencia(Long id) {
         experienciaRepo.deleteById(id);
     }
-    
+
 }

@@ -1,4 +1,17 @@
-.row{
-    background-color: gray;
-    padding: 20px;
+.row {
+  background-color: #161616;
+}
+
+h1 {
+  padding-left: 50px !important;
+}
+
+
+div {
+  background: #161616;
+}
+
+#boton {
+  margin: 10px auto 0px auto;
+  border-radius: 50px;
 }

@@ -10,20 +10,14 @@ import javax.validation.constraints.Size;
 
 @Entity
 
-public class Proyecto implements Serializable{
-    
-   @Id
-   @GeneratedValue (strategy = GenerationType.AUTO)
-    private long idPro;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
-    private String tituloPro;
-    
-    
-    @Size(min = 1, max = 1000, message = "no cumple con la longitud")
-    private String descripcionPro;
+public class Proyecto implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long idPro;
+
+    private String tituloPro;
+    private String descripcionPro;
     private String imagenPro;
 
     public Proyecto() {
@@ -67,5 +61,5 @@ public class Proyecto implements Serializable{
     public void setImagenPro(String imagenPro) {
         this.imagenPro = imagenPro;
     }
-   
+
 }

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
+public interface ProyectoRepo extends JpaRepository<Proyecto, Long> {
 
-public interface ProyectoRepo extends JpaRepository<Proyecto, Long>{
-    
 }
