@@ -1,9 +1,7 @@
 package com.portfolio.Fran.security;
 
-
-
 public class AuthResponse {
-    
+
     private String email;
     private String accessToken;
 
@@ -30,6 +28,5 @@ public class AuthResponse {
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
-    
-    
+
 }

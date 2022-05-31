@@ -7,17 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-/*import lombok.AllArgsConstructor;
-import lombok.Builder;
-*/
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name="users")
-/*@Builder(toBuilder = true)
-@AllArgsConstructor
-*/
+
 public class User implements UserDetails{
     
     @Id

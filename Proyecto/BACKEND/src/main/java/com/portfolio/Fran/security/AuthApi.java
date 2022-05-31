@@ -16,62 +16,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
 @RestController
 
 public class AuthApi {
-    
+
     @Autowired
     AuthenticationManager authManager;
-    
+
     @Autowired
     UserRepo repo;
 
     PasswordEncoder passwordEncoder;
-    
+
     @Autowired
     JwtTokenUtil jwtTokenUtil;
-    
+
     @PostMapping("/api/login")
     public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
         try {
             Authentication authentication = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                        request.getEmail(), request.getPassword())
+                            request.getEmail(), request.getPassword())
             );
-            
+
             User user = (User) authentication.getPrincipal();
             String accessToken = jwtTokenUtil.generateAccessToken(user);
             AuthResponse response = new AuthResponse(user.getEmail(), accessToken);
-            
+
             return ResponseEntity.ok().body(response);
-            
+
         } catch (BadCredentialsException ex) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-    /*
-    @PostMapping("/api/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
-        try {
-
-            String encodedPassword = this.passwordEncoder.encode(user.getPassword());
-
-            User userEncoded = new User(user.getEmail(),encodedPassword);
-
-            repo.save(userEncoded);
-
-            return new ResponseEntity("Usuario creado correctamente", HttpStatus.OK);
-
-        } catch (BadCredentialsException ex) {
-
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-
-        }
-    
-    }
-    */
-
-    
 }

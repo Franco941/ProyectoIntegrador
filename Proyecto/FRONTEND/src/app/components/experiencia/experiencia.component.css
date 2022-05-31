@@ -1,24 +1,24 @@
-.row{
+.row {
     background-color: #161616;
-    box-shadow: 0px 0px 10px #000000;
 }
 
 h1 {
-    padding-left: 50px !important;
+    padding-left: 110px !important;
 }
 
-div{
+.btn {
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+div {
     background: #161616;
 }
 
 .parte1 {
-    display:inline-block;
+    display: inline-block;
     text-align: center;
-}
-
-.img-experiencia{
-    box-shadow:  10px 10px 5px #000000;
-    box-shadow: ejeX ejeY difumasion color;
+    margin-top: 10px;
 }
 
 #foto {

@@ -10,20 +10,20 @@ import { Skill } from '../model/skill';
 export class SkillService {
 
   [x: string]: any;
-  private apiServerUrl="https://argprogback.herokuapp.com";
+  private apiServerUrl = "https://argprogback.herokuapp.com";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getSkill():Observable<Skill[]>{
+  public getSkill(): Observable<Skill[]> {
     return this.http.get<Skill[]>(`${this.apiServerUrl}/api/skill/all`);
   }
-  public addSkill(educacion: Skill):Observable<Skill>{
-    return this.http.post<Skill>(`${this.apiServerUrl}/api/skill/add`,educacion);
+  public addSkill(educacion: Skill): Observable<Skill> {
+    return this.http.post<Skill>(`${this.apiServerUrl}/api/skill/add`, educacion);
   }
-  public updateSkill(educacion: Skill):Observable<Skill>{
-    return this.http.put<Skill>(`${this.apiServerUrl}/api/skill/update`,educacion);
+  public updateSkill(educacion: Skill): Observable<Skill> {
+    return this.http.put<Skill>(`${this.apiServerUrl}/api/skill/update`, educacion);
   }
-  public deleteSkill(skillId: number):Observable<void>{
+  public deleteSkill(skillId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/api/skill/delete/${skillId}`);
   }
 }

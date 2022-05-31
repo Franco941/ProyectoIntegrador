@@ -13,23 +13,22 @@ import org.springframework.test.annotation.Rollback;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Rollback (false)
-
+@Rollback(false)
 
 public class UserRepositoryTests {
-    
+
     @Autowired
     UserRepo repo;
-    
+
     @Test
-    public void testCreateUser(){
-        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
-        String rawPassword ="123456";
-        String encodePassword=passwordEncoder.encode(rawPassword);
-        User newUser=new User("armiliofranco@gmail.com",encodePassword);
-        User savedUser=repo.save(newUser);
+    public void testCreateUser() {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String rawPassword = "123456";
+        String encodePassword = passwordEncoder.encode(rawPassword);
+        User newUser = new User("armiliofranco@gmail.com", encodePassword);
+        User savedUser = repo.save(newUser);
         assertThat(savedUser).isNotNull();
         assertThat(savedUser.getId()).isGreaterThan(0);
     }
-    
+
 }

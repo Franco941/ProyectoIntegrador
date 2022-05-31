@@ -5,27 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 
 public class Educacion implements Serializable {
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private long idEdu;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
-    private String tituloEdu;
-    
-    @NotNull
-    // @Size(min = 4, max = 4, message = "no cumple con la longitud , ingrese un año de 4 digitos")
-    private Integer fechaEdu;
-    
-    @Size(min = 1, max = 500, message = "no cumple con la longitud")
-    private String descripcionEdu;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long idEdu;
+    private String tituloEdu;
+    private Integer fechaEdu;
+    private String descripcionEdu;
     private String imagenEdu;
 
     public Educacion() {
@@ -78,7 +68,5 @@ public class Educacion implements Serializable {
     public void setImagenEdu(String imagenEdu) {
         this.imagenEdu = imagenEdu;
     }
-    
-    
-    
+
 }

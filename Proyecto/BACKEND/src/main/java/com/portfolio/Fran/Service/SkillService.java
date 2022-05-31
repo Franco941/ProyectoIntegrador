@@ -12,24 +12,27 @@ import java.util.List;
 @Transactional
 
 public class SkillService {
+
     private final SkillRepo skillRepo;
 
     @Autowired
     public SkillService(SkillRepo skillRepo) {
         this.skillRepo = skillRepo;
     }
-    public Skill agregarSkill(Skill skill ){
+
+    public Skill agregarSkill(Skill skill) {
         return skillRepo.save(skill);
     }
-    public List<Skill> buscarSkill(){
+
+    public List<Skill> buscarSkill() {
         return skillRepo.findAll();
     }
 
-    public Skill editarSkill(Skill skill){
+    public Skill editarSkill(Skill skill) {
         return skillRepo.save(skill);
     }
 
-    public void borrarSkill(Long id){
+    public void borrarSkill(Long id) {
         skillRepo.deleteById(id);
     }
 }

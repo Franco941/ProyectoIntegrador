@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface EducacionRepo extends JpaRepository<Educacion , Long>{
-    
+public interface EducacionRepo extends JpaRepository<Educacion, Long> {
+
 }
